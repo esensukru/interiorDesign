@@ -15,7 +15,6 @@ function CollectionSection() {
             scrollTrigger: {
                 trigger: '.collection-section',
                 start: 'top 70%',
-                markers: true
             },
             defaults: {
                 duration: .5
