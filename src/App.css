@@ -1,0 +1,160 @@
+:root {
+    --cream: rgb(239 233 226);
+    --brown: #2F1B12;
+    --white-2: #F5F5F5;
+    --radius-24: 24px;
+}
+
+::selection {
+    color: var(--brown);
+    background-color: var(--cream);
+}
+
+/* General */
+body {
+    background-color: var(--white-2);
+    overflow-y: hidden;
+}
+
+.bg-white-2 {
+    background-color: var(--white-2);
+}
+
+.bg-cream {
+    background-color: var(--cream);
+}
+
+.bg-brown {
+    background-color: var(--brown);
+}
+
+.text-white-2 {
+    color: var(--white-2);
+}
+
+.bg-effect {
+    position: relative;
+}
+
+.bg-effect::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: var(--radius-24);
+    pointer-events: none;
+}
+
+.box-wrapper.animation {
+    clip-path: inset(0% 0% 0% 0%);
+}
+
+.overlay {
+    position: absolute;
+    background-color: var(--cream);
+    width: 100%;
+    height: 100%;
+    clip-path: inset(0% 0% 0% 0%);
+    border-radius: var(--radius-24);
+}
+
+.box-wrapper .effect {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    background-color: var(--brown);
+    opacity: .4;
+    border-radius: var(--radius-24);
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* General */
+
+/* Header */
+.logo-wrapper,
+.nav a,
+.icon-wrapper {
+    opacity: 0;
+    transform: translate(0px, -25px);
+}
+
+/* #Header */
+
+/* HeroSection */
+.hero-img .img-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.img-wrapper.effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--brown);
+    opacity: .3;
+}
+
+.hero-box {
+    backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, .2);
+    border: 2px solid rgba(255, 255, 255, .2);
+    height: 180px;
+}
+
+.hero-box .play-icon {
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(12px);
+}
+
+.circular-text {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circular-text p {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform-origin: center;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+/* #HeroSection */
+
+/* CollectionSection */
+.collection-section .img-wrapper .effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .3);
+    pointer-events: none;
+    border-radius: var(--radius-24);
+}
+
+.collection-section .content {
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+    padding-top: 50px;
+}
+
+/* #CollectionSection */
