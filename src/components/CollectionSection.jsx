@@ -53,7 +53,7 @@ function CollectionSection() {
                 </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-3 sm:gap-5 mt-10">
+            <div className="grid grid-cols-3 gap-3 sm:gap-5 mt-4 sm:mt-10">
                 {
                     chunkedData.map((box, index) => (
                         <div key={index} className="flex flex-col gap-3 sm:gap-5 box col-span-3 sm:col-span-1">
