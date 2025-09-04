@@ -9,18 +9,28 @@ import CounterSection from './components/CounterSection'
 import AboutSection from './components/AboutSection'
 import CollectionSection from './components/CollectionSection'
 import Footer from './components/Footer'
+import { useSelector } from 'react-redux'
 
 function App() {
+  const { firstAnimation } = useSelector((store) => store.firstAnimation);
   return (
     <div id="smooth-wrapper">
       <div id="smooth-content">
-        <Header />
-        <HeroSection />
-        <GridSection />
-        <CounterSection />
-        <AboutSection />
-        <CollectionSection />
-        <Footer />
+        {
+          firstAnimation ? (
+            <HeroSection />
+          ) : (
+            <>
+              <HeroSection />
+              <Header />
+              <GridSection />
+              <CounterSection />
+              <AboutSection />
+              <CollectionSection />
+              <Footer />
+            </>
+          )
+        }
       </div>
     </div>
   )

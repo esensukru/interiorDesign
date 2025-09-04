@@ -148,7 +148,7 @@ function HeroSection() {
                 firstAnimation ? null : (
                     <div className="hero-content w-full h-[60vh] md:h-screen absolute top-0 left-0 flex flex-col items-center justify-center">
                         <div className="title-wrapper text-center">
-                            <h1 className="hero-title text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-white font-black tracking-[3px]">Contemporary</h1>
+                            <h1 className="hero-title text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-white font-black sm:tracking-[3px]">Contemporary</h1>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-12 gap-5 justify-center items-center absolute left-0 bottom-10 container mx-auto right-0">

@@ -50,7 +50,7 @@ function GridSection() {
     }, [])
 
     return (
-        <section className='container mx-auto mt-10 flex flex-wrap lg:flex-nowrap gap-4 grid-section h-full lg:h-164'>
+        <section className='container mx-auto mt-6 sm:mt-10 flex flex-wrap lg:flex-nowrap gap-4 grid-section h-full lg:h-164'>
             <div className="w-[100%] lg:w-[60%] 2xl:w-[75%] h-full">
                 <div className="box-wrapper animation relative w-full h-60 lg:h-full flex items-center justify-center">
                     <div className="overlay z-1"></div>
@@ -61,21 +61,21 @@ function GridSection() {
                         className='rounded-3xl w-full h-full object-cover relative z-2'
                     />
                     <div className="text-content absolute z-5 text-center">
-                        <span className='border-2 border-white text-white rounded-4xl py-1 px-5 lg:py-2 lg:px-7 inline-block mb-2 font-semibold text'>Aesthetic</span>
-                        <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white text">Modern</h2>
-                        <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white text">Minimalist</h2>
+                        <span className='border-2 border-white text-white rounded-4xl py-1 px-5 lg:py-2 lg:px-7 inline-block mb-3 sm:mb-2 font-semibold text text-sm sm:text-md'>Aesthetic</span>
+                        <h2 className="text-3xl sm:text-6xl lg:text-7xl font-semibold sm:font-bold text-white text">Modern</h2>
+                        <h2 className="text-3xl sm:text-6xl lg:text-7xl font-semibold sm:font-bold text-white text">Minimalist</h2>
                     </div>
                 </div>
             </div>
 
             <div className="w-[100%] lg:w-[40%] 2xl:w-[25%] flex flex-col gap-4">
-                <div className="grid-box bg-cream col-span-3 rounded-3xl flex flex-col justify-between items-start p-7 h-55 lg:h-60">
+                <div className="grid-box bg-cream col-span-3 rounded-3xl flex flex-col justify-between items-start p-7 h-50 lg:h-60">
                     <span className='border-2 border-black rounded-4xl py-1 px-5 lg:py-2 lg:px-7 inline-block mb-2 font-semibold'>Aesthetic</span>
                     <p className='text-black font-medium w-full lg:w-[80%]'>Aesthetic furniture where every piece tells a story of style</p>
-                    <h2 className="text-3xl font-semibold w-full lg:w-[60%]">Into a gallery of elegance</h2>
+                    <h2 className="text-2xl sm:text-3xl font-semibold w-full lg:w-[60%]">Into a gallery of elegance</h2>
                 </div>
 
-                <div className="col-span-3 rounded-3xl bg-[url(/images/chair.webp)] bg-center bg-no-repeat bg-cover p-7 bg-effect h-55 lg:h-100 cursor-pointer grid-box">
+                <div className="col-span-3 rounded-3xl bg-[url(/images/chair.webp)] bg-center bg-no-repeat bg-cover p-7 bg-effect h-50 lg:h-100 cursor-pointer grid-box">
                     <div className="content-area relative">
                         <span className='border-2 border-white text-white rounded-4xl py-1 px-4 lg:py-2 lg:px-4 inline-block mb-2 font-semibold'>Best Furniture</span>
                         <p className='font-medium text-lg text-white mt-5'>Indulge the artistry<br />of everyday living</p>

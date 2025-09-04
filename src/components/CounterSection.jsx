@@ -3,7 +3,7 @@ import Counter from '../UI/Counter'
 
 function CounterSection() {
     return (
-        <section className='container mx-auto counter-section my-10 grid grid-cols-4 gap-5'>
+        <section className='container mx-auto counter-section mt-6 sm:my-10 grid grid-cols-4 gap-5'>
             <div className="box flex flex-wrap text-black rounded-2xl h-30 px-5 xl:px-20 col-span-2 md:col-span-1 md:mx-auto text-start justify-start h-auto">
                 <Counter
                     from={0}
