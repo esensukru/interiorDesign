@@ -1,43 +1,32 @@
-import React, { useEffect } from 'react';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-import { useDispatch, useSelector } from 'react-redux';
-import { setFirstAnimation } from '../redux/slices/firstAnimationSlice';
-import { SplitText } from 'gsap/SplitText';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollSmoother } from 'gsap/ScrollSmoother';
-import Button from '../UI/Button';
-import { FaPlayCircle } from "react-icons/fa";
-import CircularText from '../UI/CircularText';
-
-gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger, ScrollSmoother);
+import React, { useEffect } from 'react'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { useDispatch, useSelector } from 'react-redux'
+import { setFirstAnimation } from '../redux/slices/firstAnimationSlice'
+import { SplitText } from 'gsap/SplitText'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ScrollSmoother } from 'gsap/ScrollSmoother'
+import Button from '../UI/Button'
+import { FaPlayCircle } from "react-icons/fa"
+import CircularText from '../UI/CircularText'
 
 function HeroSection() {
+    gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger, ScrollSmoother);
     const { firstAnimation } = useSelector((store) => store.firstAnimation);
     const dispatch = useDispatch();
-    let smoother = null;
-
-    const isMobile = () => {
-        return window.innerWidth <= 768;
-    };
+    let smoother;
 
     useEffect(() => {
-        if (!isMobile()) {
-            smoother = ScrollSmoother.create({
-                smooth: 3,
-                effects: true,
-                normalizeScroll: true,
-            });
-            window.smoother = smoother;
-            smoother.paused(true);
-        }
+        const isMobile = window.innerWidth <= 768;
 
-        return () => {
-            if (smoother) {
-                smoother.kill();
-                smoother = null;
-            }
-        };
+        smoother = ScrollSmoother.create({
+            smooth: isMobile ? 0 : 3,
+            effects: !isMobile,
+            normalizeScroll: true
+        });
+
+        window.smoother = smoother;
+        smoother.paused(true);
     }, [firstAnimation]);
 
     useGSAP(() => {
@@ -50,19 +39,19 @@ function HeroSection() {
                 onComplete: () => {
                     dispatch(setFirstAnimation(false));
                 }
-            });
+            })
             tl.to('.hero-img .img-wrapper', {
                 height: '150px',
-                delay: 0.6
-            });
+                delay: .6
+            })
             tl.to('.hero-img .img-wrapper', {
                 width: '100%',
-            });
+            })
             tl.to('.hero-img .img-wrapper', {
                 height: '100%',
-            });
+            })
         }
-    }, []);
+    }, [])
 
     useGSAP(() => {
         if (!firstAnimation) {
@@ -78,42 +67,40 @@ function HeroSection() {
                 opacity: 0,
                 y: 40,
                 stagger: 0.05,
-            });
+            })
 
             masterTl.to('.logo-wrapper', {
                 y: 0,
                 opacity: 1
-            }, '-=1.2');
+            }, '-=1.2')
             masterTl.to('.nav a', {
                 y: 0,
                 opacity: 1,
-                stagger: 0.1,
-            }, '-=1.1');
+                stagger: .1,
+            }, '-=1.1')
             masterTl.to('header .icon-wrapper', {
                 y: 0,
                 opacity: 1,
-            }, '-=1.1');
+            }, '-=1.1')
             masterTl.from('.hero-box-1', {
                 y: -35,
                 opacity: 0
-            }, '-=1');
+            }, '-=1')
             masterTl.from('.hero-box-2', {
                 y: -35,
                 opacity: 0
-            }, '-=0.8');
+            }, '-=.8')
             masterTl.from('.circular-text-wrapper', {
                 y: -35,
                 opacity: 0,
                 onComplete: () => {
-                    if (window.smoother && !isMobile()) {
-                        window.smoother.paused(false);
-                    }
+                    smoother.paused(false)
                 }
-            }, '-=1.1');
+            }, '-=1.1')
             masterTl.to('.hero-img .img-wrapper', {
                 scale: 1.2,
                 duration: 3
-            }, '-=1.2');
+            }, '-=1.2')
         }
     }, [firstAnimation]);
 
@@ -125,26 +112,26 @@ function HeroSection() {
                     scrub: true,
                     start: 'top top'
                 }
-            });
+            })
 
             scrollTl.to('.hero-title', {
                 y: 80,
                 opacity: 0
-            });
+            })
             scrollTl.to('.hero-box-1', {
                 y: -100,
                 opacity: 0
-            }, 0);
+            }, 0)
             scrollTl.to('.hero-box-2', {
                 y: -50,
                 opacity: 0
-            }, 0);
+            }, 0)
             scrollTl.to('.circular-text-wrapper', {
                 y: -130,
                 opacity: 0
-            }, 0);
+            }, 0)
         }
-    }, [firstAnimation]);
+    }, [firstAnimation])
 
     return (
         <section className="h-[60vh] md:h-screen overflow-hidden">
@@ -158,7 +145,7 @@ function HeroSection() {
                 </div>
             </div>
             {
-                !firstAnimation && (
+                firstAnimation ? null : (
                     <div className="hero-content w-full h-[60vh] md:h-screen absolute top-0 left-0 flex flex-col items-center justify-center">
                         <div className="title-wrapper text-center">
                             <h1 className="hero-title text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-white font-black tracking-[3px]">Contemporary</h1>
@@ -174,7 +161,7 @@ function HeroSection() {
                                 <div className="img-wrapper h-full w-full rounded-xl">
                                     <img src="/images/home.webp" alt="Home Image" className='w-full h-full object-cover rounded-xl' />
                                 </div>
-                                <FaPlayCircle className='play-icon absolute top-[50%] left-[50%] text-5xl cursor-pointer' />
+                                <FaPlayCircle className='play-icon absolute top-[50%] left-[50%] text-3xl sm:text-5xl cursor-pointer' />
                             </div>
 
                             <div className="circular-text-wrapper col-span-6 lg:col-span-4 xl:col-span-6 ml-auto hidden md:block">
@@ -186,7 +173,7 @@ function HeroSection() {
                 )
             }
         </section>
-    );
+    )
 }
 
-export default HeroSection;
+export default HeroSection
