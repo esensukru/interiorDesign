@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-    firstAnimation: true
+    firstAnimation: false
 }
 
 export const firstAnimationSlice = createSlice({

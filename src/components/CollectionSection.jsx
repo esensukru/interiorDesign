@@ -44,19 +44,19 @@ function CollectionSection() {
     return (
         <section className='container mx-auto collection-section mt-10'>
             <div className="top-area grid grid-cols-12">
-                <div className="col-span-6">
-                    <h2 className="text-7xl font-semibold leading-23">Explore Our Proudly Collection</h2>
+                <div className="col-span-12 lg:col-span-6 text-center lg:text-start">
+                    <h2 className="text-5xl sm:text-6xl xl:text-7xl font-semibold leading-16 md:leading-18 xl:leading-23">Explore Our Proudly Collection</h2>
                 </div>
-                <div className="col-start-9 col-span-3 flex flex-col items-end gap-5 text-end top-content">
-                    <Button />
-                    <p className='font-medium'>Poliform will showcase its vision of contemporary architecture, interior design trends, and innovative living at Salone de Mobile.Milano 2024</p>
+                <div className="col-span-12 lg:col-start-8 lg:col-span-5 xl:col-start-9 xl:col-span-4 flex flex-col items-center lg:items-end gap-5 text-center lg:text-end top-content">
+                    <Button className='mt-5 lg:mt-0' />
+                    <p className='font-medium px-0 sm:px-20 lg:px-0'>Poliform will showcase its vision of contemporary architecture, interior design trends, and innovative living at Salone de Mobile.Milano 2024</p>
                 </div>
             </div>
 
             <div className="grid grid-cols-3 gap-5 mt-10">
                 {
                     chunkedData.map((box, index) => (
-                        <div key={index} className="flex flex-col gap-5 box">
+                        <div key={index} className="flex flex-col gap-5 box col-span-3 sm:col-span-1">
                             {
                                 box.map((box) => (
                                     <div key={box.id} className={`relative ${box.height}`}>
@@ -65,8 +65,8 @@ function CollectionSection() {
                                             <img src={box.imageURL} alt={box.title} className='rounded-3xl w-full h-full object-cover' />
                                         </div>
                                         <div className="content absolute bottom-0 left-0 w-full rounded-3xl px-7 pb-5 flex justify-between items-center">
-                                            <h3 className="text-white font-medium text-3xl tracking-[2px]">{box.title}</h3>
-                                            <div className="icon bg-white w-10 h-10 rounded-full text-black flex items-center justify-center text-lg">
+                                            <h3 className="text-white font-medium text-2xl lg:text-3xl lg:tracking-[2px]">{box.title}</h3>
+                                            <div className="icon bg-white w-8 lg:w-10 h-8 lg:h-10 rounded-full text-black flex items-center justify-center lg:text-lg">
                                                 <HiArrowUpRight />
                                             </div>
                                         </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { TbGridDots } from "react-icons/tb"
+import { TbGridDots, TbMenu4 } from "react-icons/tb"
 
 function Header() {
     return (
@@ -8,14 +8,15 @@ function Header() {
                 <span className="text-2xl font-black cursor-pointer text-white">E-Design</span>
             </div>
 
-            <nav className='flex items-center gap-5 text-white nav'>
+            <nav className='items-center gap-5 text-white nav hidden md:flex'>
                 <a href="#" className='font-medium'>Product</a>
                 <a href="#" className='font-medium'>Lifestyle</a>
                 <a href="#" className='font-medium'>News</a>
                 <a href="#" className='font-medium'>Projects</a>
             </nav>
 
-            <div className="icon-wrapper text-2xl cursor-pointer text-white">
+            <div className="icon-wrapper text-2xl cursor-pointer text-white flex gap-5">
+                <TbMenu4 className='md:hidden' />
                 <TbGridDots />
             </div>
 
