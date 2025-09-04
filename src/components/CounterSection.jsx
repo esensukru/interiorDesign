@@ -44,7 +44,7 @@ function CounterSection() {
                     separator='+'
                     className='text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-light'
                 />
-                <span className='text-3xl font-medium'>st</span>
+                <span className='text-xl lg:text-3xl font-light lg:font-medium'>st</span>
                 <span className="md:text-lg text-neutral-400 w-full font-medium">Top in 1 Paris</span>
             </div>
 

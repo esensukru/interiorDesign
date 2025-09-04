@@ -156,7 +156,7 @@ function HeroSection() {
                                 <Button className='mt-5' />
                             </div>
 
-                            <div className="hero-box hero-box-2 p-2 lg:p-3 xl:p-5 col-span-6 lg:col-span-3 xl:col-span-2 rounded-xl text-white-2 flex items-center justify-center relative">
+                            <div className="hero-box hero-box-2 p-2 lg:p-3 xl:p-5 col-span-12 sm:col-span-6 lg:col-span-3 xl:col-span-2 rounded-xl text-white-2 flex items-center justify-center relative">
                                 <div className="img-wrapper h-full w-full rounded-xl">
                                     <img src="/images/home.webp" alt="Home Image" className='w-full h-full object-cover rounded-xl' />
                                 </div>

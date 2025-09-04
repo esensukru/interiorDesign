@@ -33,13 +33,13 @@ function AboutSection() {
     }, [])
 
     return (
-        <section className="container mx-auto about-section grid grid-cols-12 gap-10 h-auto lg:h-140 xl:h-164">
-            <div className="order-2 lg:order-1 img-wrapper col-span-12 lg:col-span-7 h-full relative">
+        <section className="container mx-auto about-section grid grid-cols-1 lg:grid-cols-12 gap-10 h-auto lg:h-140 xl:h-164">
+            <div className="order-2 lg:order-1 img-wrapper lg:col-span-7 h-full relative w-full">
                 <div className="overlay z-1"></div>
                 <img src="/images/home-4.webp" alt="Home Image" className='rounded-4xl inline-block w-full h-full object-cover relative z-2' />
             </div>
 
-            <div className="order-1 lg:order-2 about-content flex flex-col justify-center items-center lg:items-start gap-5 col-span-12 lg:col-span-5 text-center lg:text-start h-full">
+            <div className="order-1 lg:order-2 about-content flex flex-col justify-center items-center lg:items-start gap-5 lg:col-span-5 text-center lg:text-start h-full w-full">
                 <span className="font-medium category">Elegance - Timeless</span>
                 <h2 className="text-5xl sm:text-6xl xl:text-7xl font-semibold leading-16 md:leading-18 xl:leading-23">Modern Style Timeless Charm</h2>
                 <p className='font-medium xl:w-[55%]'>Discover Poliform's 2024 preview, featuring sofas, chairs, and armchairs embodying diverse lifestyle concepts, alongside striking tables, coffee tables, and sideboards.</p>
