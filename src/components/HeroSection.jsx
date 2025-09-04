@@ -133,7 +133,7 @@ function HeroSection() {
     }, [firstAnimation])
 
     return (
-        <section className="h-screen overflow-hidden">
+        <section className="h-[65vh] md:h-screen overflow-hidden">
             <div className="hero-img flex items-center justify-center h-full w-full">
                 <div className="img-wrapper effect relative h-full flex items-center justify-center">
                     <img
@@ -145,25 +145,25 @@ function HeroSection() {
             </div>
             {
                 firstAnimation ? null : (
-                    <div className="hero-content w-full h-screen absolute top-0 left-0 flex flex-col items-center justify-center">
+                    <div className="hero-content w-full h-[65vh] md:h-screen absolute top-0 left-0 flex flex-col items-center justify-center">
                         <div className="title-wrapper text-center">
                             <h1 className="hero-title text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-white font-black tracking-[3px]">Contemporary</h1>
                         </div>
 
-                        <div className="grid grid-cols-12 gap-5 items-center absolute left-0 bottom-10 container mx-auto right-0">
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-5 justify-center items-center absolute left-0 bottom-10 container mx-auto right-0">
                             <div className="hero-box hero-box-1 p-3 xl:p-5 hidden lg:block lg:col-span-5 xl:col-span-4 rounded-xl text-white-2 flex flex-col items-start justify-center">
                                 <p className='line-clamp-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptate quas ex, culpa dolor nihil officiis, optio nisi quae adipisci odio quo. Maiores ullam labore nobis iusto, repellendus ipsa quidem.</p>
                                 <Button className='mt-5' />
                             </div>
 
-                            <div className="hero-box hero-box-2 p-2 lg:p-3 xl:p-5 col-span-12 sm:col-span-6 lg:col-span-3 xl:col-span-2 rounded-xl text-white-2 flex items-center justify-center relative">
+                            <div className="hero-box hero-box-2 p-2 lg:p-3 xl:p-5 md:col-start-1 lg:col-start-6 col-span-6 lg:col-span-3 xl:col-span-2 rounded-xl text-white-2 flex items-center justify-center relative">
                                 <div className="img-wrapper h-full w-full rounded-xl">
                                     <img src="/images/home.webp" alt="Home Image" className='w-full h-full object-cover rounded-xl' />
                                 </div>
                                 <FaPlayCircle className='play-icon absolute top-[50%] left-[50%] text-5xl cursor-pointer' />
                             </div>
 
-                            <div className="circular-text-wrapper col-span-6 lg:col-span-4 xl:col-span-6 ml-auto">
+                            <div className="circular-text-wrapper col-span-6 lg:col-span-4 xl:col-span-6 ml-auto hidden md:block">
                                 <CircularText text="E-Design * E-Design * " onHover='speedUp' spinDuration={20} className='col-span-6 ml-auto' />
                             </div>
                         </div>

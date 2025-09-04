@@ -108,7 +108,7 @@ body {
     backdrop-filter: blur(12px);
     background-color: rgba(255, 255, 255, .2);
     border: 2px solid rgba(255, 255, 255, .2);
-    height: 180px;
+    height: 200px;
 }
 
 .hero-box .play-icon {
@@ -160,6 +160,14 @@ body {
 /* #CollectionSection */
 
 /* Media Queries */
+@media(max-width: 767px) {
+    .hero-box {
+        height: 120px;
+        width: 200px;
+        margin-inline: auto;
+    }
+}
+
 @media (max-width: 660px) {
     .container {
         padding-inline: 15px;
